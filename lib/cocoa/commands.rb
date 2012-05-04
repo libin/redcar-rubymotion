@@ -2,22 +2,24 @@
 module Redcar
   class Cocoa
     class URLCommand < ProjectCommand
+      def title;"Google";end
       def url
         "www.google.com"
       end
-
       def execute
-        Redcar::HtmlView::DisplayWebContent.new("RubyMotion",url,true,Cocoa::ReferenceTab).run
+        Redcar::HtmlView::DisplayWebContent.new(title,url,true,Cocoa::ReferenceTab).run
       end
     end
 
     class ShowRMDocs < URLCommand
+      def title;"RubyMotion";end
       def url
         "www.rubymotion.com/developer-center/"
       end
     end
 
     class ShowIOSRefDocs < URLCommand
+      def title;"iOS Reference";end
       def url
         "developer.apple.com/library/ios/navigation/#section=Resource%20Types&topic=Reference"
       end
